@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import UserTable from './components/UserTable';
 import CreateUserPage from './components/CreatUser';
 import EditUser from './components/EditUser';
+import AirportTable from './components/AirportTable';
 
 
 //Importing Pages
@@ -17,6 +18,8 @@ import Statistics from './pages/Statistics';
 import TestScheduling from './pages/TestScheduling';
 import Profile from './pages/Profile';
 import Intro from './pages/Intro';
+import CreateAirportPage from './components/CreatAirport';
+import EditAirpotPage from './components/EditAirpot';
 
 
 
@@ -37,7 +40,9 @@ function App() {
           <Route path="/users" element={<UserTable />} />
           <Route path="/users/edit/:id" element={<EditUser />} />
           <Route path="/create-user" element={<CreateUserPage />} />
-          
+          <Route path="/airports" element={<AirportTable />} />
+          <Route path="/create-airport" element={<CreateAirportPage />} />
+          <Route path="/airports/edit/:id" element={<EditAirpotPage />} />
         </Routes>
       </main>
       <Footer />

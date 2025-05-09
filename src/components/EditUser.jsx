@@ -38,8 +38,7 @@ export default function EditUser() {
             certificationDateIssued: e.target.certificationDateIssued.value,
             certificateUrl: e.target.certificateUrl.value,
         };
-        /////////////////////
-        console.log(updatedUser); 
+
         editUser(id, updatedUser).then(() => { nav('/users'); });
     };
 
