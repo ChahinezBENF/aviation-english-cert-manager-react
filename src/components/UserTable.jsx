@@ -122,9 +122,8 @@ export default function UserTable() {
           )}
         </tbody>
       </table>
-      <button onClick={() => nav('/create-user')} >
-        Create User
-      </button>
+      <button onClick={() => nav('/create-user')} >Create User</button>
+      <button onClick={() => nav('/hr-dashboard')}>Go Back</button>
     </div>
   );
 }

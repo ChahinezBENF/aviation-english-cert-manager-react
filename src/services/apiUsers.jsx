@@ -18,9 +18,14 @@ export const getAllUsers = async () => {
 
 //Get user by ID
 export const getUserById = async (id) => {
-  const response = await axios.get(`${URL}/users/${id}`);
-  return response.data;
+  try {
+    const response = await axios.get(`${URL}/users/${id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error("Failed to fetch user by ID");
+  }
 };
+
 
 
 //Create user 
@@ -42,3 +47,4 @@ export const deleteUser = async (id) => {
   const response = await axios.delete(`${URL}/users/${id}`);
   return response.data;
 };
+

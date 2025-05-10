@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../services/apiUsers';
 
 //CSS Styling
@@ -9,22 +8,30 @@ import '../styles/pages.css';
 export default function Login () {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); // State for error messages
   const nav = useNavigate();
 
   const loginUser = async (e) => {
     e.preventDefault();
+    setErrorMessage(''); // Clear previous errors
     
     try {
       const response = await login(email, password);
-    
       console.log('Response received:', response);
-      if (response.role === 'controller') {
-        nav('/controller-dashboard', { state: { user: response } });
-      } else if (response.role === 'hr') {
-        nav('/hr-dashboard', { state: { user: response } });
-      }
+
+      if (response.id) {
+      localStorage.setItem("userId", response.id); } // Store ID in localStorage
+   
+      if (response.role === "controller" || response.role === "pilot") {
+      nav(`/controller-dashboard/${response.id}`); // Redirect to unique URL
+    } else if (response.role === "hr") {
+      nav("/hr-dashboard");
+    }
     } catch (error) {
       console.error('Login error:', error);
+      setErrorMessage(
+        error.response?.data?.error || 'Invalid email or password. Please try again.'
+      );
     }
   }
 
@@ -60,7 +67,7 @@ export default function Login () {
             required
           />
         </div>
-
+      {errorMessage && <div className="error-alert">{errorMessage}</div>}
         <button type="submit"> Login </button>
       </form>
 

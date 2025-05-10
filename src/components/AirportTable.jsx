@@ -85,6 +85,7 @@ export default function AirportTable() {
         </tbody>
       </table>
       <button onClick={() => nav('/create-airport')}>Create Airport</button>
+      <button onClick={() => nav('/hr-dashboard')}>Go Back</button>
     </div>
   );
 }
