@@ -1,0 +1,63 @@
+import React from "react";
+
+//Import Styling
+import '../styles/components.css';
+
+import {
+  Bar,
+  Line,
+  Pie,
+} from "react-chartjs-2"; // Import chart types from react-chartjs-2
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+} from "chart.js";
+
+// Register chart.js components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement
+);
+
+export default function GraphStatistics({ stats }) {
+  // Data for certifications expiring in the next 30 days
+  const expiringCertsData = {
+    labels: ["Expired", "Expiring in 30 Days", "Valid"],
+    datasets: [
+      {
+        label: "Certification Status",
+        data: [
+          stats.expiredCertifications,
+          stats.expiringCertifications,
+          stats.validCertifications,
+        ],
+        backgroundColor: ["#E74C3C", "#F1C40F", "#2ECC71"],
+      },
+    ],
+  };
+
+  return (
+    <div className="graphs-container">
+      <div className="graph1">
+        <h3>Certification Status</h3>
+        <Pie data={expiringCertsData} />
+      </div>
+    </div>
+  );
+}
