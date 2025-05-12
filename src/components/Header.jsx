@@ -17,7 +17,6 @@ export default function Header() {
               <Link to="/controller-dashboard" >Controller Dashboard</Link>
               <Link to="/statistics" >Statistics</Link>
               <Link to="/test-scheduling" >Test Scheduling</Link>
-              <Link to="/profile" >Profile</Link>
             </div>
           </nav>
         </header>

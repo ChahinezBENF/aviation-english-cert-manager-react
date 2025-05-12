@@ -7,6 +7,7 @@ import {
   Bar,
   Line,
   Pie,
+  Doughnut,
 } from "react-chartjs-2"; // Import chart types from react-chartjs-2
 
 import {
@@ -56,7 +57,7 @@ export default function GraphStatistics({ stats }) {
     <div className="graphs-container">
       <div className="graph1">
         <h3>Certification Status</h3>
-        <Pie data={expiringCertsData} />
+        <Doughnut data={expiringCertsData} />
       </div>
     </div>
   );
