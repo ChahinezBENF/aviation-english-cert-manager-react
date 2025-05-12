@@ -19,18 +19,6 @@ export default function StatisticCards({ stats }) {
         <p>{stats.roles.pilots}</p>
       </div>
 
-      <div className="card">
-        <h3>Certification Levels</h3>
-        <ul>
-          {Object.entries(stats.certificationLevels).map(([level, count]) => (
-            <li key={level}>
-              Level {level}: {count}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-     
     </div>
   );
 }

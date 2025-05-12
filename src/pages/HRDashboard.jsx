@@ -40,6 +40,8 @@ export default function HRDashboard() {
     fetchStatistics();
   }, []);
 
+
+
   if (loading) {
     return <p>Loading HR Dashboard...</p>; // Show loading message
   }

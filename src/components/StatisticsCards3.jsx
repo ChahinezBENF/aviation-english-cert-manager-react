@@ -15,7 +15,7 @@ import {
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend);
 
 export default function StatisticsCards3({ certificationStats }) {
-  
+
 
   // Graph for Certification Level Distribution
   const certLevelDistributionData = {
@@ -36,6 +36,15 @@ export default function StatisticsCards3({ certificationStats }) {
       <div className="card-3">
         <h3>Average Certification Level</h3>
         <p>{certificationStats.averageCertificationLevel}</p>
+
+        <h3>Certification Levels</h3>
+        <ul>
+          {Object.entries(certificationStats.certificationLevels).map(([level, count]) => (
+            <li key={level}>
+              Level {level}: {count}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="card-3">
@@ -49,6 +58,8 @@ export default function StatisticsCards3({ certificationStats }) {
         </ul>
         <Bar data={certLevelDistributionData} />
       </div>
+
+
     </div>
   );
 }
