@@ -8,6 +8,8 @@ import StatisticCards from '../components/StatisticsCards';
 import StatisticsCards2 from '../components/StatisticsCards2';
 import { getAllAirports } from '../services/apiAirports';
 import StatisticsCards3 from '../components/StatisticsCards3';
+import HeaderHr from '../components/HeaderHr';
+
 
 //CSS Styling
 import '../styles/pages.css';
@@ -51,8 +53,11 @@ export default function HRDashboard() {
   }
 
   return (
+    <div>
+      <HeaderHr/>
     <div className="statistics-page hr-dashboard">
-      <h1>HR Dashboard</h1>
+
+      <h1>Dashboard</h1>
       {/* Overviews and Graphs Section */}
       <div className="chart-table-container">
         <div className="dashboard-overview">
@@ -90,6 +95,7 @@ export default function HRDashboard() {
           <button onClick={() => navigate("/airports")}>Go to Airport Table</button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

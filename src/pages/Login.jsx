@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../services/apiUsers';
+import Header from '../components/Header';
 
 //CSS Styling
 import '../styles/pages.css';
@@ -36,7 +37,10 @@ export default function Login () {
   }
 
   return (
-    <div className="login">
+    <div>
+     <Header />
+     <div className="login">
+
       <h1 >Login</h1>
 
       <form className="login-form" onSubmit={loginUser}>
@@ -72,11 +76,13 @@ export default function Login () {
       </form>
 
       <div className="">
-        <Link to="/forgot-password" > Forgot Password? </Link>
-        <Link to="/signup" > Sign Up </Link>
+        <Link to="/coming-soon" > Forgot Password? </Link>
+        <Link to="/coming-soon" > Sign Up </Link>
       </div>
 
     </div>
+
+  </div>
   );
 };
 

@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function TestSchedule({ tests, onReschedule }) {
+  const nav = useNavigate();
   return (
     <div className="upcoming-tests">
-      <h2>Upcoming Test Dates</h2>
+      <h2>Test Schedule</h2>
       {tests.length > 0 ? (
         <ul>
           {tests.map((test) => (
@@ -16,6 +18,9 @@ export default function TestSchedule({ tests, onReschedule }) {
       ) : (
         <p>No upcoming tests scheduled.</p>
       )}
+      <button onClick={() => { nav(`/coming-soon`) }} >
+        Schedule Test
+      </button>
     </div>
   );
 }

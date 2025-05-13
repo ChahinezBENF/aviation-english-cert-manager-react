@@ -4,6 +4,7 @@ import ProfileCard from "../components/ProfileCard";
 import TestSchedule from "../components/TestSchedule";
 import CertAlerts from "../components/CertAlerts";
 import TestHistory from "../components/TestHistory";
+import HeaderLogout from '../components/HeaderLogout';
 import { getUserById } from "../services/apiUsers";
 
 export default function ControllerDashboard() {
@@ -48,15 +49,32 @@ export default function ControllerDashboard() {
     ? user.testHistory.filter((test) => new Date(test.testDate) > new Date())
     : [];
 
-  return (
+   return (
+    <div>  
+      
+        <HeaderLogout/>
+
     <div className="controller-dashboard">
-      <ProfileCard user={user} />
-      {daysUntilExpiry !== null && <CertAlerts daysUntilExpiry={daysUntilExpiry} />}
-      <TestSchedule
-        tests={upcomingTests}
-        onReschedule={(testId) => console.log("Reschedule test:", testId)}
-      />
-      <TestHistory history={user.testHistory || []} />
+
+      <div className="dashboard-section">
+        <ProfileCard user={user} />
+      </div>
+      {daysUntilExpiry !== null && (
+        <div className="dashboard-section">
+          <h2>Certification Alerts</h2>
+          <CertAlerts daysUntilExpiry={daysUntilExpiry} />
+        </div>
+      )}
+      <div className="dashboard-section">
+        <TestSchedule
+          tests={upcomingTests}
+          onReschedule={(testId) => console.log("Reschedule test:", testId)}
+        />
+      </div>
+      <div className="dashboard-section">
+        <TestHistory history={user.testHistory || []} />
+      </div>
+    </div>
     </div>
   );
 }

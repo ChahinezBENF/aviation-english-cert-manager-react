@@ -2,13 +2,13 @@ import React from "react";
 
 export default function StatisticsCards2({ airportStats }) {
   return (
-    <div className="statistics-cards">
-      <div className="card">
+    <div className="statistics-cards-2">
+      <div className="card-4">
         <h3>Total Airports</h3>
         <p>{airportStats.totalAirports}</p>
       </div>
 
-      <div className="card">
+      <div className="card-5">
         <h3>Top Airports (Most Employees)</h3>
         <ul>
           {airportStats.mostEmployeesAirports.map((airport) => (
@@ -17,9 +17,7 @@ export default function StatisticsCards2({ airportStats }) {
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="card">
+        <hr />
         <h3>Top Airports (Least Employees)</h3>
         <ul>
           {airportStats.leastEmployeesAirports.map((airport) => (
@@ -28,9 +26,7 @@ export default function StatisticsCards2({ airportStats }) {
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="card">
+        <hr />
         <h3>Airports with No Employees</h3>
         <ul>
           {airportStats.noEmployeeAirports.length}

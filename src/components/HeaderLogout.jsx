@@ -12,7 +12,7 @@ export default function Header() {
               <Link to="/">ICAO Certification System</Link>
             </div>
             <div >
-              <Link to="/login">Login</Link>
+              <Link to="/login">Log out</Link>
             </div>
           </nav>
         </header>

@@ -8,6 +8,7 @@ import UserTable from './components/UserTable';
 import CreateUserPage from './components/CreatUser';
 import EditUser from './components/EditUser';
 import AirportTable from './components/AirportTable';
+import ComingSoon from './components/ComingSoon';
 
 
 //Importing Pages
@@ -26,7 +27,7 @@ import EditAirpotPage from './components/EditAirpot';
 function App() {
   return (
     <div className="">
-      <Header />
+      {/* <Header /> */}
       <main className="Routes">
         <Routes>
           <Route path="/" element={<Intro />} />
@@ -41,6 +42,7 @@ function App() {
           <Route path="/airports" element={<AirportTable />} />
           <Route path="/create-airport" element={<CreateAirportPage />} />
           <Route path="/airports/edit/:id" element={<EditAirpotPage />} />
+          <Route path="/coming-soon" element={<ComingSoon />} />
         </Routes>
       </main>
       <Footer />
