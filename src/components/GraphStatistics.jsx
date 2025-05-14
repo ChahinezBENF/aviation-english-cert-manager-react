@@ -46,7 +46,7 @@ export default function GraphStatistics({ stats }) {
         data: [
           stats.expiredCertifications,
           stats.expiringCertifications,
-          stats.validCertifications,
+          stats.validCertifications - stats.expiringCertifications,
         ],
         backgroundColor: ["#E74C3C", "#F1C40F", "#2ECC71"],
       },
