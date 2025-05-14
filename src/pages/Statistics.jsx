@@ -6,6 +6,7 @@ import {
   Bar,
   Line,
 } from "react-chartjs-2"; // Import chart types from react-chartjs-2
+import HeaderHr from '../components/HeaderHr';
 
 import "../styles/pages.css";
 
@@ -122,7 +123,7 @@ export default function Statistics() {
     responsive: true,
     plugins: {
       legend: {
-        position: "top", // Adjust legend position if needed
+        position: "top", 
       },
       title: {
         display: true,
@@ -131,28 +132,30 @@ export default function Statistics() {
     },
     scales: {
       x: {
-        stacked: true, // Enable stacking for x-axis
+        stacked: true, 
       },
       y: {
-        stacked: true, // Enable stacking for y-axis
-        beginAtZero: true, // Start y-axis at 0
+        stacked: true, 
+        beginAtZero: true, 
       },
     },
   };
 
 
   return (
+    <div>
+      <HeaderHr/>
     <div className="statistics-page">
       <h1>Detailed Statistics</h1>
-
+        <hr />
       {/* Roles Distribution */}
-      <div className="chart-table-container">
+      <div className="chart-table-container roles-distribution">
         <div className="chart-container">
-          <h2>Role Distribution</h2>
+        
           <Bar data={rolesData} />
         </div>
-        <div className="table-container">
-          <h2>Role Distribution (Table)</h2>
+        <div className="table-container-2">
+            <h2>Role Distribution</h2>
           <table>
             <thead>
               <tr>
@@ -176,13 +179,13 @@ export default function Statistics() {
 
 
       {/* Certification Trends */}
-      <div className="chart-table-container">
+      <div className="chart-table-container certification-trends">
         <div className="chart-container">
-          <h2>Certification Trends</h2>
+
           <Line data={trendData} />
         </div>
-        <div className="table-container">
-          <h2>Certification Trends (Table)</h2>
+        <div className="table-container-2">
+                    <h2>Certification Trends</h2>
           <table>
             <thead>
               <tr>
@@ -207,13 +210,13 @@ export default function Statistics() {
       </div>
 
       {/* Airport Statistics */}
-      <div className="chart-table-container">
-        <div className="chart-container">
-          <h2>Airport Certification Statistics</h2>
+      <div className="stat-table-container">
+        <div className="chart-container b">
+
           <Bar data={airportCertificationData} options={chartOptions} />
         </div>
-        <div className="table-container">
-          <h2>Airport Employee and Certification Statistics</h2>
+        <div className="table-container-2 b">
+                    <h2>Airport Certification Statistics</h2>
           <table>
             <thead>
               <tr>
@@ -241,9 +244,9 @@ export default function Statistics() {
         </div>
       </div>
 
-<div className="chart-table-container">
-  <div className="table-container">
-    <h2>Users with Expiring Certifications</h2>
+<div className="stat-table-container employees-cert">
+  <div className="table-container-2">
+    <h2>Employees with Expiring Certifications</h2>
     <table>
       <thead>
         <tr>
@@ -264,8 +267,8 @@ export default function Statistics() {
     </table>
   </div>
 
-  <div className="table-container">
-    <h2>Users with Valid Certifications</h2>
+  <div className="table-container-2">
+    <h2>Employees with Valid Certifications</h2>
     <table>
       <thead>
         <tr>
@@ -289,5 +292,7 @@ export default function Statistics() {
 
 
     </div>
+
+  </div>
   );
 }

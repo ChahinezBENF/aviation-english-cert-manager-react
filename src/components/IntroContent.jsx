@@ -1,7 +1,9 @@
 import React from 'react'
 import '../styles/components.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function IntroContent() {
+      const nav = useNavigate();
     return (
         <div className="intro-content">
             <section className="intro-header">
@@ -10,6 +12,11 @@ export default function IntroContent() {
                     Your gateway to efficient and seamless aviation certification management. 
                     Discover a platform that ensures compliance, improves efficiency, and enhances safety for aviation professionals worldwide.
                 </p>
+                <div className="intro-header-image">
+                    <img 
+                        src="/images/aviation.png" alt="Aviation" 
+                    />
+                </div>
             </section>
             <section className="info-section">
                 <h2>What We Offer</h2>
@@ -52,7 +59,7 @@ export default function IntroContent() {
                     Join the growing community of aviation professionals and organizations using ICAO Certification Management. 
                     Stay ahead with cutting-edge tools and insights tailored to your needs.
                 </p>
-                <button>Learn More</button>
+                <button onClick={() => { nav(`/coming-soon`) }}>Learn More</button>
             </section>
         </div>
     );

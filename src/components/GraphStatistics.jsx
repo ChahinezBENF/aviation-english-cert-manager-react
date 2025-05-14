@@ -55,10 +55,10 @@ export default function GraphStatistics({ stats }) {
 
   return (
     <div className="card-3">
-      <div className="graph1">
+
         <h3>Certification Status</h3>
         <Doughnut data={expiringCertsData} />
-      </div>
+
     </div>
   );
 }

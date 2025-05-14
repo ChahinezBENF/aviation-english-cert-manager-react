@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getUserById, editUser } from '../services/apiUsers';
+import HeaderHr from './HeaderHr';
 
 export default function EditUser() {
     const { id } = useParams(); // Extract user ID from route params
@@ -48,8 +49,10 @@ export default function EditUser() {
 
 
     return (
+                 <div>
+              <HeaderHr/>
         <div className="edit-user-page">
-            <h1>Edit User</h1>
+            <h1>Update Employee</h1>
             <form onSubmit={editTheUser}>
                 <div>
                     <label>Name:</label>
@@ -78,6 +81,7 @@ export default function EditUser() {
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                 </div>
                 <div>
@@ -95,6 +99,7 @@ export default function EditUser() {
                     </button>
                 </div>
             </form>
+        </div>
         </div>
     );
 }

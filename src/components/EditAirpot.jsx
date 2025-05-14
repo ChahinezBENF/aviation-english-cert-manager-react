@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getAirportById, editAirport } from '../services/apiAirports';
+import HeaderHr from './HeaderHr';
 
 export default function EditAirportPage() {
   const { id } = useParams(); // Extract airport ID from route params
@@ -44,8 +45,10 @@ export default function EditAirportPage() {
   }
 
   return (
-    <div className="edit-airport-page">
-      <h1>Edit Airport</h1>
+                     <div>
+                  <HeaderHr/>
+    <div className="edit-user-page">
+      <h1>Update Airport</h1>
       <form onSubmit={submit}>
         <div>
           <label>Code:</label>
@@ -80,6 +83,7 @@ export default function EditAirportPage() {
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 }

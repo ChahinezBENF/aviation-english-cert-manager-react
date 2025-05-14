@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getAllAirports, deleteAirport } from '../services/apiAirports';
 import { useNavigate } from 'react-router-dom';
+import HeaderHr from '../components/HeaderHr';
 
 export default function AirportTable() {
   const nav = useNavigate();
@@ -39,9 +40,11 @@ export default function AirportTable() {
   };
 
   return (
+    <div><HeaderHr/>
     <div className="airport-table-container">
+      <h1>Airports</h1>
       <div className="search">
-        <h1>Airports</h1>
+        
         <input
           type="text"
           placeholder="Search airports..."
@@ -49,7 +52,7 @@ export default function AirportTable() {
           onChange={search}
         />
       </div>
-      <table className="airport-table">
+      <table className="user-table">
         <thead>
           <tr>
             <th>Code</th>
@@ -84,8 +87,11 @@ export default function AirportTable() {
           )}
         </tbody>
       </table>
+      <div className="action-buttons">
       <button onClick={() => nav('/create-airport')}>Create Airport</button>
       <button onClick={() => nav('/hr-dashboard')}>Go Back</button>
+    </div>
+    </div>
     </div>
   );
 }

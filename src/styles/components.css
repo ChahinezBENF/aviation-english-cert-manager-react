@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #f7f8fa;
+  color: #333;
+  line-height: 1.6;
+}
+
 /* Header Styles */
 .header {
   background: linear-gradient(to right, #0056b3, #00a6fb);
@@ -102,75 +110,76 @@
   transform: translateY(-8px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
+
 .importance-section {
-    background: #e9f7ef;
-    padding: 3rem;
-    border-radius: 10px;
-    text-align: center;
+  background: #e9f7ef;
+  padding: 3rem;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .importance-section h2 {
-    font-size: 2rem;
-    color: #00754a;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #00754a;
+  margin-bottom: 1rem;
 }
 
 .importance-section p {
-    font-size: 1.2rem;
-    color: #004b8d;
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #004b8d;
+  margin-bottom: 1rem;
 }
 
 .importance-section ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .importance-section li {
-    background: #fff;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
-    color: #555;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #555;
 }
 
 .cta-section {
-    background: linear-gradient(to right, #0056b3, #00a6fb);
-    color: white;
-    text-align: center;
-    padding: 3rem;
-    border-radius: 10px;
+  background: linear-gradient(to right, #0056b3, #00a6fb);
+  color: white;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 10px;
 }
 
 .cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .cta-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .cta-section button {
-    background: white;
-    color: #0056b3;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  background: white;
+  color: #0056b3;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .cta-section button:hover {
-    background: #004b8d;
-    color: white;
+  background: #004b8d;
+  color: white;
 }
 
 
@@ -183,16 +192,13 @@ footer {
   font-size: 1rem;
   border-radius: 10px;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
- 
+
 }
 
 footer p {
   margin: 0;
   font-weight: 500;
 }
-
-
-
 
 /* Coming Soon Styles */
 .coming-soon {
@@ -275,3 +281,375 @@ footer p {
   background-color: #f0f0f0;
 }
 
+/* User Table Styles */
+.user-table-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1200px;
+  min-height: 80vh;
+
+
+
+}
+
+.user-table-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #1e3a8a;
+  margin-top: 0%;
+}
+
+.user-table-container .search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.user-table-container .search input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-table-container .search input:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.user-table th,
+.user-table td {
+  text-align: left;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.user-table th {
+  background: linear-gradient(to right, #0056b3, #00a6fb);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.user-table tr:hover {
+  background-color: #e3f2fd;
+}
+
+.user-table a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.user-table a:hover {
+  color: #003d73;
+}
+
+.user-table button {
+  background: #007bb5;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.user-table button:hover {
+  background-color: #005f8a;
+  transform: scale(1.05);
+}
+
+
+.user-table-container button {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background: #004b8d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.user-table-container button:hover {
+  background-color: #003d73;
+  transform: scale(1.05);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: left;
+  margin-top: 1rem;
+}
+
+
+
+/* Create User and Airport Pages Styles */
+/* I used same classname for both pages  */
+.create-user-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 79vh;
+  background: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.create-user-page h1 {
+  font-size: 2.5rem;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-weight: bold;
+  text-align: center;
+}
+
+.create-user-page form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.create-user-page label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.create-user-page input,
+.create-user-page select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+.create-user-page input:focus,
+.create-user-page select:focus {
+  border-color: #4facfe;
+  outline: none;
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+.create-user-page button {
+  padding: 1rem 2rem;
+  background-color: #007bb5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.create-user-page button:hover {
+  background-color: #005f8a;
+  transform: scale(1.05);
+}
+
+.create-user-page .cancel-btn {
+  background-color: #e1e1e1;
+  margin-left: 1rem;
+}
+
+.create-user-page .cancel-btn:hover {
+  background-color: #bcbcbc;
+}
+
+.create-user-page div {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+/* Edit User Page Styles */
+.edit-user-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 79vh;
+  background: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.edit-user-page h1 {
+  font-size: 2.5rem;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-weight: bold;
+  text-align: center;
+}
+
+.edit-user-page form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.edit-user-page label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.edit-user-page input,
+.edit-user-page select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+.edit-user-page input:focus,
+.edit-user-page select:focus {
+  border-color: #4facfe;
+  outline: none;
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+.edit-user-page button {
+  padding: 1rem 2rem;
+  background-color: #007bb5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.edit-user-page button:hover {
+  background-color: #005f8a;
+  transform: scale(1.05);
+}
+
+.edit-user-page .cancel-btn {
+  background-color: #e1e1e1;
+  margin-left: 1rem;
+}
+
+.edit-user-page .cancel-btn:hover {
+  background-color: #bcbcbc;
+}
+
+.edit-user-page div {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+
+
+/* Airport Table Styles */
+.airport-table-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1200px;
+  min-height: 80vh;
+}
+
+.airport-table-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #1e3a8a;
+  margin-top: 0%;
+}
+
+.airport-table-container .search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.airport-table-container .search input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.airport-table-container .search input:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+.airport-table-container button {
+  background: #004b8d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 1%;
+}
+
+.airport-table-container button:hover {
+  background-color: #003d73;
+  transform: scale(1.05);
+}
+
+/* Images style */
+
+
+.intro-header-image img {
+    max-width: 300px;
+    height: auto;
+}

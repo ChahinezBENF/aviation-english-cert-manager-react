@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { createAirport } from '../services/apiAirports';
+import HeaderHr from './HeaderHr';
 
 export default function CreateAirportPage() {
   const nav = useNavigate();
@@ -21,32 +22,35 @@ export default function CreateAirportPage() {
   };
 
   return (
-    <div className="create-airport-page">
-      <h1>Create Airport</h1>
-      <form onSubmit={submit}>
-        <div>
-          <label>Code:</label>
-          <input type="text" name="code" required />
-        </div>
-        <div>
-          <label>Name:</label>
-          <input type="text" name="name" required />
-        </div>
-        <div>
-          <label>City:</label>
-          <input type="text" name="city" required />
-        </div>
-        <div>
-          <label>Country:</label>
-          <input type="text" name="country" required />
-        </div>
-        <div>
-          <button type="submit">Create</button>
-          <button type="button" onClick={() => nav('/airports')}>
-            Cancel
-          </button>
-        </div>
-      </form>
+    <div>
+      <HeaderHr />
+      <div className="create-user-page">
+        <h1>Create a new Airport</h1>
+        <form onSubmit={submit}>
+          <div>
+            <label>Code:</label>
+            <input type="text" name="code" required />
+          </div>
+          <div>
+            <label>Name:</label>
+            <input type="text" name="name" required />
+          </div>
+          <div>
+            <label>City:</label>
+            <input type="text" name="city" required />
+          </div>
+          <div>
+            <label>Country:</label>
+            <input type="text" name="country" required />
+          </div>
+          <div>
+            <button type="submit">Create</button>
+            <button type="button" onClick={() => nav('/airports')}>
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

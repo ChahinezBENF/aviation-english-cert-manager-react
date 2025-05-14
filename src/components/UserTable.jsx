@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { getAllUsers, deleteUser } from '../services/apiUsers';
 import { useNavigate } from 'react-router-dom';
 import CertValidity from './CertValidity';
+import HeaderHr from '../components/HeaderHr';
+
 
 export default function UserTable() {
   const nav = useNavigate();
@@ -53,9 +55,12 @@ export default function UserTable() {
   };
 
   return (
+    <div>
+      <HeaderHr/>
     <div className="user-table-container">
+      <h1>Employees</h1>
       <div className="search">
-        <h1>Users</h1>
+        
         <input
           type="text"
           placeholder="Search users..."
@@ -122,8 +127,12 @@ export default function UserTable() {
           )}
         </tbody>
       </table>
+      <div className='action-buttons'>
       <button onClick={() => nav('/create-user')} >Create User</button>
       <button onClick={() => nav('/hr-dashboard')}>Go Back</button>
+    
+</div>   
+ </div>
     </div>
   );
 }

@@ -55,7 +55,7 @@ export default function HRDashboard() {
   return (
     <div>
       <HeaderHr/>
-    <div className="statistics-page hr-dashboard">
+    <div className="hr-dashboard">
 
       <h1>Dashboard</h1>
       {/* Overviews and Graphs Section */}
@@ -86,12 +86,12 @@ export default function HRDashboard() {
       <div className="chart-table-container">
         <div className="table-container">
           <h2>Users</h2>
-          <p>Manage user statistics and certifications.</p>
+          <p>Manage employees statistics and certifications.</p>
           <button onClick={() => navigate("/users")}>Go to User Table</button>
         </div>
         <div className="table-container">
           <h2>Airports</h2>
-          <p>View and manage airport details here.</p>
+          <p>View and manage airports details here.</p>
           <button onClick={() => navigate("/airports")}>Go to Airport Table</button>
         </div>
       </div>

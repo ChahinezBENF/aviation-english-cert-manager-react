@@ -31,13 +31,15 @@ export default function StatisticsCards3({ certificationStats }) {
 
   return (
     <div className="statistics-cards-wrapper">
-      <div className="statistics-cards-1">
+      <div className="statistics-cards-3">
         <div className="card-6">
           <h3>Average Certification Level</h3>
-          <p>{certificationStats.averageCertificationLevel || "N/A"}</p>
+          <hr style={{ width: "50%", margin: "1rem auto" }} />
+          <h2>{certificationStats.averageCertificationLevel || "N/A"}</h2>
         </div>
         <section className="card-7">
           <h3>Certification Levels</h3>
+          <hr style={{ width: "50%", margin: "1rem auto" }} />
           <ul>
             {Object.entries(certificationStats.certificationLevels).map(([level, count]) => (
               <li key={level}>
@@ -47,6 +49,8 @@ export default function StatisticsCards3({ certificationStats }) {
           </ul>
         </section>
         <section className="card-8">
+          <h3>Certification Percentages</h3>
+          <hr style={{ width: "50%", margin: "1rem auto" }} />
           <ul>
             {Object.entries(certificationStats.certificationLevelPercentages).map(([level, percentage]) => (
               <li key={level}>
