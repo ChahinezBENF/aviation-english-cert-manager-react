@@ -26,8 +26,6 @@ export const getUserById = async (id) => {
   }
 };
 
-
-
 //Create user 
 export const createUser = async (userData) => {
   const response = await axios.post(`${URL}/users`, userData);

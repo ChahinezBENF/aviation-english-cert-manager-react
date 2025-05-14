@@ -80,7 +80,8 @@ export default function UserTable() {
             <th>Certification Issued</th>
             <th>Certification Expires</th>
             <th>Certification Validity</th>
-            <th>Certificate URL</th>
+            <th>Certificate</th>
+            <th>Profil</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -95,7 +96,7 @@ export default function UserTable() {
                 <td>{formatUTCDate(user.certification?.dateIssued)}</td>
                 <td>{formatUTCDate(user.certification?.expiresOn)}</td>
                 <td>
-                  <CertValidity expiresOn={user.certification?.expiresOn} /> {/* New Component */}
+                  <CertValidity expiresOn={user.certification?.expiresOn} /> 
                 </td>
                 <td>
                   {user.certification?.certificateUrl ? (
@@ -110,6 +111,13 @@ export default function UserTable() {
                     'N/A'
                   )}
                 </td>
+                    <td>
+        
+                    <button
+                      onClick={() => {nav(`/controller-dashboard/${user._id}`)}}>
+                      View 
+                    </button>
+                  </td>
                 <td>
                   <button onClick={() => { nav(`/users/edit/${user._id}`) }} >
                     Modify
