@@ -26,19 +26,19 @@ This is a web application designed to manage ICAO English certifications for air
 
 
 # ✅ Requirement Fulfillment for Front-End Development (35%) : 
-#  I. Use React to create the application’s front-end :
+##  I. Use React to create the application’s front-end :
 The front-end of the application is built entirely using React, enabling efficient and reusable UI components (eg, `src/App.jsx`)
 
-#  II. Use CSS to style the application :
+##  II. Use CSS to style the application :
 The application’s styling is done using 2 pages CSS (`src/components.jsx`) for the components files and (`src/pages.jsx`) for the pages files, ensuring a cohesive and visually appealing design
 
-#  III. Create at least four different views or pages for the application :
+##  III. Create at least four different views or pages for the application :
 The application includes multiple views such as (`Login.jsx`, `Statistics.jsx` and `HRDashboard`)
 
-#  IV. Create some form of navigation that is included across the application’s pages, utilizing React Router for page rendering :
+##  IV. Create some form of navigation that is included across the application’s pages, utilizing React Router for page rendering :
 The application uses React Router to navigate between pages seamlessly like in the (`Header.jsx`) and (`HeaderHr.jsx`) files
 
-# V. Use React Hooks or Redux for application state management : 
+## V. Use React Hooks or Redux for application state management : 
 The application uses multiples React Hooks 
 
 ### Example
@@ -46,7 +46,7 @@ The application uses multiples React Hooks
 import { useEffect, useState } from 'react';
 ```
 
-# VI. Interface directly with the server and API that you created :
+## VI. Interface directly with the server and API that you created :
 The application interacts with the backend API to manage data dynamically using Axios in the 2 files (`services/apiUsers.jsx` and `services/apiAirports.jsx`)
 
 ### Example
