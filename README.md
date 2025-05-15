@@ -7,7 +7,7 @@ This is a web application designed to manage ICAO English certifications for air
 - **CSS**: Custom styling for components and pages
 - **API Requests**: Axios for backend communication
 
-## 🔧 Project Structure for Backend
+## 🔧 Project Structure for Frontend
 ```plaintext
 ├── frontend/                   # Frontend folder for React app
 │   ├── public/                 # Public assets (e.g., images/aviation.png)
