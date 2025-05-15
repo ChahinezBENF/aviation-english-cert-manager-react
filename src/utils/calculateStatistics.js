@@ -4,7 +4,6 @@ export const calculateUserStatistics = (users, airports) => {
   const next30Days = new Date();
   next30Days.setDate(today.getDate() + 30);
 
-
   // **User-related statistics**
   // Count the number of users by role (controllers and pilots only)
   const totalUsers = users.filter(user => user.role === 'controller' || user.role === 'pilot').length;
@@ -37,12 +36,8 @@ export const calculateUserStatistics = (users, airports) => {
       user.certification?.expiresOn && new Date(user.certification.expiresOn) >= today
   );
 
-
-
-
   // **Airport-related statistics**
   const totalAirports = airports.length;
-
 
  const airportStats = airports.map((airport) => {
   const controllers = (airport.controllers || []).map((id) =>
