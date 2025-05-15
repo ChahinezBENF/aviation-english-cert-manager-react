@@ -2,6 +2,11 @@
 This is a web application designed to manage ICAO English certifications for air traffic controllers and pilots. It helps HR departments track and manage certifications, while also allowing controllers and pilots to view their certification status, upload documents, and track expiry.
 ---
 
+## 🔧 Tech Stack
+- **Front-End**: React (with Vite for faster development)
+- **CSS**: Custom styling for components and pages
+- **API Requests**: Axios for backend communication
+
 ## 🔧 Project Structure for Backend
 ```plaintext
 ├── frontend/                   # Frontend folder for React app
@@ -19,6 +24,8 @@ This is a web application designed to manage ICAO English certifications for air
 └── README.md                   # Documentation for the project (frontend Sid)
 ```
 --- 
+
+
 
 # ✅ Requirement Fulfillment for Front-End Development (35%) : 
 #  I. Use React to create the application’s front-end :
@@ -58,3 +65,18 @@ export const login = async (email, password) => {
 ---
 ## Frontend repository Link: https://github.com/ChahinezBENF/aviation-english-cert-manager-backend
 ## Frontend deployement Link: https://aviation-english-cert-manager-backend.onrender.com
+
+---
+# 🚀 Future Enhancements
+
+## Manage Registration and Password Recovery
+Currently, registration is handled exclusively by HR. In the future, employees will be able to register themselves, along with a system for managing forgotten passwords.
+
+## Test Scheduling
+Users will be able to schedule a test for a controller or pilot, either independently or through an HR agent.
+
+## Additional User Filters
+Enhancements will include more filtering options to generate detailed statistics, aiding in better company management.
+
+## Certification Downloads
+Employees will have the ability to download their certificates directly from the database.

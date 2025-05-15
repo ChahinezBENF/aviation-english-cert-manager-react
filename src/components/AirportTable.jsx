@@ -7,13 +7,14 @@ export default function AirportTable() {
   const nav = useNavigate();
   const [airports, setAirports] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  // State to hold filtered airports based on the search term
   const [filteredAirports, setFilteredAirports] = useState([]);
 
   // Fetch airports
   useEffect(() => {
     getAllAirports().then((res) => {
-      setAirports(res);
-      setFilteredAirports(res);
+      setAirports(res); // Set all airports
+      setFilteredAirports(res); // Initially, all airports are visible
     });
   }, []);
 

@@ -82,8 +82,6 @@ export const calculateUserStatistics = (users, airports) => {
 
   const totalEmployees = controllers.length + pilots.length;
 
-
-
   return {
     airportName: airport.name,
     totalEmployees,
@@ -144,20 +142,30 @@ const certificationLevels = certifiedUsers.reduce((acc, user) => {
 
   // Generate trends for the past 6 months 
   const dates = Array.from({ length: 6 }, (_, i) => {
-    const date = new Date(today.getFullYear(), today.getMonth() - i, 1);
-    return {
-      month: date.toLocaleString('default', { month: 'long' }),
-      expired: expiredCertifications.filter(
-        (user) => new Date(user.certification.expiresOn).getMonth() === date.getMonth()
-      ).length,
-      expiring: expiringCertifications.filter(
-        (user) => new Date(user.certification.expiresOn).getMonth() === date.getMonth()
-      ).length,
-      valid: validCertifications.filter(
-        (user) => new Date(user.certification.expiresOn).getMonth() === date.getMonth()
-      ).length,
-    };
-  });
+  const date = new Date(today.getFullYear(), today.getMonth() - i, 1);
+  const startOfMonth = new Date(date.getFullYear(), date.getMonth(), 1); // Start of the month
+  const endOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0); // End of the month
+
+  return {
+    month: date.toLocaleString('default', { month: 'long' }),
+    expired: expiredCertifications.filter(
+      (user) =>
+        user.certification?.expiresOn &&
+        new Date(user.certification.expiresOn) < startOfMonth
+    ).length,
+    expiring: expiringCertifications.filter(
+      (user) =>
+        user.certification?.expiresOn &&
+        new Date(user.certification.expiresOn) >= startOfMonth &&
+        new Date(user.certification.expiresOn) <= endOfMonth
+    ).length,
+    valid: validCertifications.filter(
+      (user) =>
+        user.certification?.expiresOn &&
+        new Date(user.certification.expiresOn) >= startOfMonth
+    ).length,
+  };
+}).reverse();
 
 
   return {
@@ -182,6 +190,7 @@ const certificationLevels = certifiedUsers.reduce((acc, user) => {
       detailedCertifications: airportStats, // Detailed certifications for each airport
     },
 
+    // **Certification-related return**
     certificationStats: {
       averageCertificationLevel,
       certificationLevelPercentages,

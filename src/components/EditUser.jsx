@@ -6,6 +6,8 @@ import HeaderHr from './HeaderHr';
 export default function EditUser() {
     const { id } = useParams(); // Extract user ID from route params
     const nav = useNavigate();
+
+    // Form state
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -15,6 +17,10 @@ export default function EditUser() {
         certificationDateIssued: '',
         certificateUrl: '',
     });
+
+    // Error state for validation messages
+    const [error, setError] = useState('');
+
 
     useEffect(() => {
         getUserById(id).then((res) => setFormData({
@@ -30,9 +36,23 @@ export default function EditUser() {
 
     const editTheUser = (e) => {
         e.preventDefault();
+
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const email = e.target.email.value;
+
+        // Validate email format
+        if (!emailRegex.test(email)) {
+            setError('Invalid email format. Please enter a valid email.');
+            return;
+        }
+
+        // Clear error if valid
+        setError('');
+
         const updatedUser = {
             name: e.target.name.value,
-            email: e.target.email.value,
+            email,
             role: e.target.role.value,
             airportCode: e.target.airportCode.value,
             certification: {
@@ -56,6 +76,8 @@ export default function EditUser() {
             <div className="edit-user-page">
                 <h1>Update Employee</h1>
                 <form onSubmit={editTheUser}>
+                    {/* Show validation errors */}
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
                     <div>
                         <label>Name:</label>
                         <input type="text" name="name" defaultValue={formData.name} required />
