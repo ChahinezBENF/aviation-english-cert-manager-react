@@ -1,5 +1,8 @@
 # ICAO English Training Management System for Controllers and Pilots
+This is a web application designed to manage ICAO English certifications for air traffic controllers and pilots. It helps HR departments track and manage certifications, while also allowing controllers and pilots to view their certification status, upload documents, and track expiry.
+---
 
+## 🔧 Project Structure for Backend
 ```plaintext
 ├── frontend/                   # Frontend folder for React app
 │   ├── public/                 # Public assets (e.g., images/aviation.png)
@@ -15,7 +18,7 @@
 │   └── package.json            # Frontend dependencies and scripts
 └── README.md                   # Documentation for the project (frontend Sid)
 ```
-
+--- 
 
 # ✅ Requirement Fulfillment for Front-End Development (35%) : 
 #  I. Use React to create the application’s front-end :

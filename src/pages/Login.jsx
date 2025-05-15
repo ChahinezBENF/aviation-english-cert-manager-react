@@ -13,28 +13,42 @@ export default function Login () {
   const nav = useNavigate();
 
   const loginUser = async (e) => {
-    e.preventDefault();
-    setErrorMessage(''); // Clear previous errors
-    
-    try {
-      const response = await login(email, password);
-      console.log('Response received:', response);
+  e.preventDefault();
+  setErrorMessage(''); // Clear previous errors
 
-      if (response.id) {
-      localStorage.setItem("userId", response.id); } // Store ID in localStorage
-   
-      if (response.role === "controller" || response.role === "pilot") {
-      nav(`/controller-dashboard/${response.id}`); // Redirect to unique URL
-    } else if (response.role === "hr") {
-      nav("/hr-dashboard");
+  try {
+    const response = await login(email, password); // Call the login API
+    console.log('Response received:', response);
+
+    // Check if token is present in the response
+    if (response.token) {
+      localStorage.setItem('token', response.token); // Save token for authentication
+    } else {
+      throw new Error('Token not provided in response'); // Handle missing token
     }
-    } catch (error) {
-      console.error('Login error:', error);
-      setErrorMessage(
-        error.response?.data?.error || 'Invalid email or password. Please try again.'
-      );
+
+    // Save userId and role in localStorage 
+    if (response.id) {
+      localStorage.setItem('userId', response.id); // Save user ID
     }
+
+    // Redirect based on role
+    if (response.role === 'controller' || response.role === 'pilot') {
+      nav(`/controller-dashboard/${response.id}`);
+    } else if (response.role === 'hr') {
+      nav('/hr-dashboard');
+    } else {
+      throw new Error('Unknown role'); // Handle unexpected roles
+    }
+  } catch (error) {
+    console.error('Login error:', error);
+
+    setErrorMessage(
+      error.response?.data?.error || 'Invalid email or password. Please try again.'
+    );
   }
+};
+
 
   return (
     <div>
