@@ -6,6 +6,7 @@ This is a web application designed to manage ICAO English certifications for air
 - **Front-End**: React (with Vite for faster development)
 - **CSS**: Custom styling for components and pages
 - **API Requests**: Axios for backend communication
+- **Statistics** : Chart.js
 
 ## 🔧 Project Structure for Frontend
 ```plaintext
@@ -74,3 +75,11 @@ Enhancements will include more filtering options to generate detailed statistics
 
 ## Certification Downloads
 Employees will have the ability to download their certificates directly from the database.
+
+# 📚 Resources Used
+
+- https://www.w3schools.com/js/default.asp
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- https://www.chartjs.org/docs/latest/samples/scriptable/pie.html
+
+
