@@ -1,12 +1,21 @@
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../services/apiUsers';
 import HeaderHr from './HeaderHr';
-import { useState } from 'react'; // for error state management
-
+import { useState, useEffect } from 'react'; // for error state management
+import { getAllAirports } from '../services/apiAirports';
 
 export default function CreateUserPage() {
     const nav = useNavigate();
-        const [error, setError] = useState(''); 
+    const [error, setError] = useState('');
+    const [airports, setAirports] = useState([]); // State to store airports
+
+    // Fetch airports on component mount
+    useEffect(() => {
+        getAllAirports()
+            .then(setAirports)
+            .catch(err => console.error('Error fetching airports:', err));
+    }, []);
+
 
     const submit = (e) => {
         e.preventDefault();
@@ -17,26 +26,22 @@ export default function CreateUserPage() {
 
         const email = e.target.email.value;
         const password = e.target.password.value;
-
         // Validation for email
         if (!emailRegex.test(email)) {
             setError('Invalid email format. Please enter a valid email.'); // Set error message if email is invalid
-            return; 
+            return;
         }
-
         // Validation for password
         if (!passwordRegex.test(password)) {
             setError('Password must be at least 8 characters long and include at least 1 letter and 1 number.'); // Set error message for invalid password
-            return; 
+            return;
         }
-
         // Clear error if inputs are valid
         setError('');
-
         const user = {
             name: e.target.name.value,
-            email, 
-            password, 
+            email,
+            password,
             role: e.target.role.value,
             airportCode: e.target.airportCode.value,
             certification: {
@@ -59,7 +64,7 @@ export default function CreateUserPage() {
                 <h1>Create a new Employee</h1>
                 <form onSubmit={submit}>
                     {/* Display error messages */}
-                    {error && <p style={{ color: 'red' }}>{error}</p>} 
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
                     <div>
                         <label>Name:</label>
                         <input type="text" name="name" required />
@@ -81,7 +86,14 @@ export default function CreateUserPage() {
                     </div>
                     <div>
                         <label>Airport Code:</label>
-                        <input type="text" name="airportCode" />
+                        <select name="airportCode" required>
+                            <option value="">Select an Airport</option>
+                            {airports.map((airport) => (
+                                <option key={airport.code} value={airport.code}>
+                                    {airport.name} ({airport.code})
+                                </option>
+                            ))}
+                        </select>
                     </div>
                     <div>
                         <label>Certification Level:</label>

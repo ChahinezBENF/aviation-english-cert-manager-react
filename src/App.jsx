@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 //Importing Components
-import Header from './components/Header'
 import Footer from './components/Footer'
 import UserTable from './components/UserTable';
 import CreateUserPage from './components/CreatUser';
@@ -19,6 +18,7 @@ import Statistics from './pages/Statistics';
 import Intro from './pages/Intro';
 import CreateAirportPage from './components/CreatAirport';
 import EditAirpotPage from './components/EditAirpot';
+import ScheduleTestCalendar from "./components/ScheduleTestCalendar";
 
 
 
@@ -40,6 +40,7 @@ function App() {
           <Route path="/airports" element={<AirportTable />} />
           <Route path="/create-airport" element={<CreateAirportPage />} />
           <Route path="/airports/edit/:id" element={<EditAirpotPage />} />
+          <Route path="/schedule-test" element={<ScheduleTestCalendar />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
         </Routes>
       </main>

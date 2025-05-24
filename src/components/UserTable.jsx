@@ -56,7 +56,8 @@ export default function UserTable() {
         const matchesSearch =
           user.name.toLowerCase().includes(searchTerm) ||
           user.email.toLowerCase().includes(searchTerm) ||
-          user.role.toLowerCase().includes(searchTerm);
+          user.role.toLowerCase().includes(searchTerm)||
+          user.airportCode.toLowerCase().includes(searchTerm);
 
         return matchesRole && matchesValidity && matchesLevel && matchesSearch;
       })

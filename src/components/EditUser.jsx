@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getUserById, editUser } from '../services/apiUsers';
 import HeaderHr from './HeaderHr';
+import { getAllAirports } from '../services/apiAirports';
 
 export default function EditUser() {
     const { id } = useParams(); // Extract user ID from route params
@@ -20,7 +21,8 @@ export default function EditUser() {
 
     // Error state for validation messages
     const [error, setError] = useState('');
-
+    // State to store airports
+    const [airports, setAirports] = useState([]);
 
     useEffect(() => {
         getUserById(id).then((res) => setFormData({
@@ -32,6 +34,10 @@ export default function EditUser() {
             certificationDateIssued: res.certification?.dateIssued?.slice(0, 10) || '',
             certificateUrl: res.certification?.certificateUrl || '',
         }));
+
+        getAllAirports().then(setAirports)
+            .catch((err) => console.error('Error fetching airports:', err));
+
     }, [id]);
 
     const editTheUser = (e) => {
@@ -95,7 +101,17 @@ export default function EditUser() {
                     </div>
                     <div>
                         <label>Airport Code:</label>
-                        <input type="text" name="airportCode" defaultValue={formData.airportCode} />
+                        <select
+                            name="airportCode"
+                            value={formData.airportCode}
+                            onChange={(e) => setFormData({ ...formData, airportCode: e.target.value })} // Update the state when the user selects a different option
+                            required    >
+                            {airports.map((airport) => (
+                                <option key={airport.code} value={airport.code}>
+                                    {airport.name} ({airport.code})
+                                </option>
+                            ))}
+                        </select>
                     </div>
                     <div>
                         <label>Certification Level:</label>

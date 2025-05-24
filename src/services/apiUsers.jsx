@@ -66,4 +66,21 @@ export const deleteUser = async (id) => {
   return response.data;
 };
 
+// Add a scheduled test
+export const addTestToSchedule = async (id, testData) => {
+  const response = await axiosInstance.post(`/users/${id}/schedule`, testData);
+  return response.data;
+};
+
+
+// Cancel a scheduled test
+export const cancelScheduledTest = async (userId, testId) => {
+  try {
+    const response = await axiosInstance.delete(`/users/${userId}/schedule/${testId}`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to cancel scheduled test:', error.response?.data || error.message);
+    throw error;
+  }
+};
 
