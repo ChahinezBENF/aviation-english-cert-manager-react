@@ -1,6 +1,8 @@
 
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import HeaderLogout from "../components/HeaderLogout";
+
 
 export default function ScheduleTestCalendar() {
   const [selectedDate, setSelectedDate] = useState(""); // Default empty string for input compatibility
@@ -17,6 +19,9 @@ export default function ScheduleTestCalendar() {
 };
 
   return (
+    <div>
+    <HeaderLogout />
+    <div className="schedule-test-ca" >
     <div className="schedule-test-calendar">
       <h2>Select a Test Date</h2>
       <input
@@ -26,6 +31,8 @@ export default function ScheduleTestCalendar() {
       />
       <button onClick={handleDateSelection}>Confirm Date</button>
       <button onClick={() => navigate(-1)}>Cancel</button>
+    </div>
+    </div>
     </div>
   );
 }
